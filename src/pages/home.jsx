@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
-import { Search, Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import "./home.css";
 
 
@@ -92,35 +92,35 @@ const IMPACT_CARDS = [
   },
 ];
 
-const TILES = [
-  {
-    kicker: "BCG Answer",
-    title: "BCG Answer",
-    text: "Discover the answer to your most important business challenges. BCG Answer delivers integrated insights powered by our cross-functional expertise and the latest thinking shaping today’s business decisions.",
-    cta: "Ask us a question",
-    href: "https://www.bcg.com/bcg-answer",
-    className: "tile-1",
-    image: "https://picsum.photos/seed/bcg-answer-engine/500/600",
-  },
-  {
-    kicker: "Lead With Advantage",
-    title: "Artificial Intelligence at Scale",
-    text: "Applied AI is now the difference between advantage and catch-up. See how leaders are scaling it responsibly.",
-    cta: "Navigate what's next",
-    href: "https://www.bcg.com/capabilities/artificial-intelligence",
-    className: "tile-2",
-    image: "https://picsum.photos/seed/bcg-ai-scale/500/600",
-  },
-  {
-    kicker: "Build Tomorrow",
-    title: "Meet BCG X",
-    text: "New products, services, and businesses — built in partnership with the world’s largest organizations.",
-    cta: "Start your transformation",
-    href: "https://www.bcg.com/x/",
-    className: "tile-3",
-    image: "https://picsum.photos/seed/bcg-build-studio/500/600",
-  },
-];
+// const TILES = [
+//   {
+//     kicker: "BCG Answer",
+//     title: "BCG Answer",
+//     text: "Discover the answer to your most important business challenges. BCG Answer delivers integrated insights powered by our cross-functional expertise and the latest thinking shaping today’s business decisions.",
+//     cta: "Ask us a question",
+//     href: "https://www.bcg.com/bcg-answer",
+//     className: "tile-1",
+//     image: "https://picsum.photos/seed/bcg-answer-engine/500/600",
+//   },
+//   {
+//     kicker: "Lead With Advantage",
+//     title: "Artificial Intelligence at Scale",
+//     text: "Applied AI is now the difference between advantage and catch-up. See how leaders are scaling it responsibly.",
+//     cta: "Navigate what's next",
+//     href: "https://www.bcg.com/capabilities/artificial-intelligence",
+//     className: "tile-2",
+//     image: "https://picsum.photos/seed/bcg-ai-scale/500/600",
+//   },
+//   {
+//     kicker: "Build Tomorrow",
+//     title: "Meet BCG X",
+//     text: "New products, services, and businesses — built in partnership with the world’s largest organizations.",
+//     cta: "Start your transformation",
+//     href: "https://www.bcg.com/x/",
+//     className: "tile-3",
+//     image: "https://picsum.photos/seed/bcg-build-studio/500/600",
+//   },
+// ];
 
 const INDUSTRIES = [
   {
@@ -400,7 +400,7 @@ function useScrolled(threshold = 12) {
 function Nav({ onTrackClick, onShowServices, onShowCompany, onGoHome, onMenuToggle }) {
   const scrolled = useScrolled();
   const [open, setOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(null);
+  // const [openMenu, setOpenMenu] = useState(null);
 
   useEffect(() => {
     onMenuToggle?.(open);
