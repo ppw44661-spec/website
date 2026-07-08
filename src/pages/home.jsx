@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import "./home.css";
 
@@ -1017,11 +1017,11 @@ export default function Home({ onTrackClick }) {
     setShowServices(true);
   };
 
-  const handleShowCompany = (page = "about") => {
-    setCompanyPage(page);
-    setShowCompany(true);
-    setShowServices(false);
-  };
+const handleShowCompany = useCallback((page = "about") => {
+  setCompanyPage(page);
+  setShowCompany(true);
+  setShowServices(false);
+}, []);
 
   const handleGoHome = () => {
     setShowCompany(false);
