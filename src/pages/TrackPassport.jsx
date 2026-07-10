@@ -640,13 +640,14 @@ export default function TrackPassport({ onBack }) {
 
   return (
     <div className="track-page">
+      {onBack && (
+        <button type="button" className="track-back-btn" onClick={onBack}>
+          ← Back to Home
+        </button>
+      )}
+
       {/* ===== Hero / Search ===== */}
-      <div className="track-hero">
-        {onBack && (
-          <button type="button" className="track-back-btn" onClick={onBack}>
-            ← Back to Home
-          </button>
-        )}
+      <div className={`track-hero ${passport && !loading ? "track-hero-hidden" : ""}`}>
         <h1>Track Your Passport</h1>
         <p>Enter your passport number below to check the current status of your application.</p>
 

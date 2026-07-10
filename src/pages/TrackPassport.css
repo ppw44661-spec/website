@@ -23,7 +23,7 @@ body {
 
 .track-hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: #0f5f39;
   color: #ecfdf5;
   padding: 80px 24px 110px;
@@ -32,11 +32,10 @@ body {
   border-radius: 28px;
 }
 
-.track-hero .track-back-btn {
+.track-back-btn {
   position: fixed;
   top: 20px;
   left: 20px;
-  margin: 0;
   z-index: 1000;
 }
 
@@ -44,12 +43,10 @@ body {
   .track-hero {
     padding: 24px 16px 42px;
   }
-  .track-hero .track-back-btn {
-    position: static;
-    top: auto;
-    left: auto;
-    margin: 0 0 18px;
-    z-index: 5;
+  .track-back-btn {
+    top: 14px;
+    left: 14px;
+    z-index: 1001;
   }
   .track-hero h1 {
     margin-top: 0;
@@ -94,16 +91,27 @@ body {
 
 .track-search-box input {
   flex: 1;
+  min-width: 0;
   border: none;
   padding: 18px 24px;
   font-size: 16px;
   outline: none;
   color: #ecfdf5;
   background: transparent;
+  caret-color: #a7f3d0;
 }
 
 .track-search-box input::placeholder {
   color: rgba(223, 248, 238, 0.6);
+}
+
+.track-hero-hidden {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, max-height 0.35s ease, padding 0.35s ease, margin 0.35s ease;
 }
 
 .track-search-box button {
@@ -136,8 +144,8 @@ body {
 
 .track-result-wrap {
   max-width: 920px;
-  margin: -65px auto 60px;
-  padding: 0 20px;
+  margin: -20px auto 60px;
+  padding: 20px 20px 0;
   flex: 1;
   width: 100%;
 }
@@ -206,20 +214,20 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 14px;
-  border-bottom: 1px solid #eef2f7;
+  border-bottom: 1px solid rgba(74, 222, 128, 0.25);
   padding-bottom: 18px;
   margin-bottom: 18px;
 }
 
 .track-summary h2 {
   font-size: 20px;
-  color: #0f172a;
+  color: #ecfccb;
   margin-bottom: 4px;
 }
 
 .track-app-id {
   font-size: 13px;
-  color: #64748b;
+  color: #d9f99d;
 }
 
 .track-status-badge {
@@ -408,23 +416,23 @@ body {
 .progress-info strong {
   display: block;
   font-size: 14.5px;
-  color: #0f172a;
+  color: #ecfccb;
   margin-bottom: 2px;
 }
 
 .progress-label-current {
-  color: #2563eb;
+  color: #a7f3d0;
 }
 
 .progress-date {
   font-size: 12.5px;
-  color: #94a3b8;
+  color: #bbf7d0;
 }
 
 .progress-remark {
   margin: 6px 0 0;
   font-size: 13px;
-  color: #64748b;
+  color: #d9f99d;
 }
 
 .track-grid {
@@ -442,15 +450,15 @@ body {
 
 .track-label {
   font-size: 12px;
-  color: #94a3b8;
+  color: #c7f9d4;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
 
 .track-value {
   font-size: 14px;
-  color: #0f172a;
-  font-weight: 500;
+  color: #f8fafc;
+  font-weight: 600;
 }
 
 .track-remark {

@@ -437,6 +437,18 @@ function Nav({ onTrackClick, onShowServices, onShowCompany, onGoHome, onMenuTogg
       {open && (
         <div className="bcg-mobile-menu">
           <div className="bcg-mobile-menu-header">
+            <a
+              href="#top"
+              className="bcg-mobile-menu-logo"
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                if (onGoHome) onGoHome();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              VENTORA
+            </a>
             <button
               type="button"
               className="bcg-mobile-menu-close"
