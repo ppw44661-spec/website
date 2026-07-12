@@ -410,8 +410,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./TrackPassport.css";
 
+<<<<<<< HEAD
 // Use a relative API path so requests go through the React dev server proxy.
 const api = axios.create({ baseURL: "/api" });
+=======
+// Use the deployed backend directly without a proxy.
+const api = axios.create({ baseURL: "https://passport-1-pnxv.onrender.com/api" });
+>>>>>>> d161f26 (fix admin route 404)
 
 const COMPLETED_STATUSES = ["Completed", "Passport Dispatched", "Dispatched"];
 const REJECTED_STATUSES = ["Rejected"];
